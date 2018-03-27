@@ -82,10 +82,10 @@ public class TaxonDescriptionAnalyzer {
 	  
 	  try{ 	 
 			// STEP 1) Pre- processing: quotes replace, abbreviations replace (i.e: ca.)
-			// OJOOJOJOJOJOOJOJOJ falta, lo he hecho manualmente. 
-		    //  Las abreviaturas no hacen falta porque las podemos manejar en la base de conocimiento.   
-		    // Hay que reemplazar " y '
-		    // Hay que agregarle un punto al final a las descripciones que no lo tienen. 
+			// Preprocesing (manually). 
+		    //     
+		    // Remove " and '
+		    // Every description must have a "." at the end 
            preprocessingTaxonDescription(conn, p_book_id);  
 		  
 			/* STEP 2) Taxon description clause splitting using FreeLing. 

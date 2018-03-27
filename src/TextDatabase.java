@@ -19,7 +19,22 @@ public class TextDatabase {
 /* BOOK -----------------------------------------------------------------------------------------------------------*/
 
   public static String getBookDocumentation(Connection conn, Integer pBookId)
-  // devuelve la documentatcion entera asociada al libro.  3 de octubre de 2015
+ 	    /* Database 
+		 * 
+		 * - Description: 
+		 *    Returns a book documnetation.
+		 *   
+		 * - Revision History:
+		 *     3/10/2015 - Maria Aux. Mora
+		 *     
+		 * - Arguments (input / output):
+		 *    conn   : database opened connection.
+		 *    pBookId: book id.
+		 * 
+		 * - Return Values:
+		 *     book documnetation.   
+		*/	 
+  
   
   { 
  	   ResultSet rs = null;
@@ -1873,7 +1888,7 @@ public static Boolean tokenIsAfterConjunction(Connection conn, TokenParser curre
   public static void updateChunkPosFromClause(Connection conn, Integer p_book_id)
     {
 	  /* - Description: Update chunk.pos using clause.pos.  The procedure segment clause.pos using each char "F"=",". 
-	    *  NO EN USO - SE PUEDE BORRAR  
+	    *  Not in use - SE PUEDE BORRAR  
 	    * - Revision History:
 	    *     22/06/2015 - Maria Aux. Mora
 	    *     
@@ -2848,7 +2863,7 @@ public static  String getClosetUnitofMeasure (Connection conn, TokenParser curre
  	   
  	try
  	{      	     
- 	 /* Statement prepare*/
+ 	 /* Statement prepared*/
  		 	  
  	  stmt = conn.createStatement();
  	  String sql = "delete from text.character where taxon_description_id in (select id from text.taxon_description t where book_id = " +
@@ -2870,7 +2885,7 @@ public static  String getClosetUnitofMeasure (Connection conn, TokenParser curre
  	   
  	try
  	{      	     
- 	 /* Statement prepare*/
+ 	 /* Statement prepared*/
  		 	  
  	  stmt = conn.createStatement();
  	  String sql = "delete from text.biological_entity where taxon_description_id in (select id from text.taxon_description t where book_id = " +
